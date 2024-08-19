@@ -1,11 +1,21 @@
----
-slug: /development
-sidebar_position: 1
-hide_table_of_contents: true
----
+class HelloWorld {
+  getInfo() {
+    return {
+      id: 'helloworld',
+      name: 'It works!',
+      blocks: [
+        {
+          opcode: 'hello',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Hello!'
+        }
+      ]
+    };
+  }
 
-# Development
+  hello() {
+    return 'World!';
+  }
+}
 
-If you want to build TurboWarp itself (scratch-gui, scratch-vm, etc.), see [Modding Introduction](./getting-started.md).
-
-If you want to build custom extensions, see [Custom Extensions](./extensions/introduction.md)
+Scratch.extensions.register(new HelloWorld());
